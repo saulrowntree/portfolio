@@ -1,7 +1,8 @@
 import React, {useEffect} from "react";
-import {about} from "../../data";
+import {about, carouselData} from "../../data";
 import {Fade} from "react-reveal";
 import DrawFuzz from "./Fuzz"
+import VerticalCarousel from "../VerticalCarousel";
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
                         <p className="mb-8 leading-relaxed text-2xl">
                             {about.body}
                         </p>
+                        <VerticalCarousel data={carouselData.slides}/>
                         <div className="flex justify-center">
                             <a
                                 href="src/components/home/Home.jsx"

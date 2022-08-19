@@ -72,8 +72,10 @@ const VerticalCarousel = (array) => {
                                         transform: `translateY(${determinePlacement(i)}px)`
                                     }}
                                 >
-                                 {item.text}
+                                    <span><img style={{display: "inline"}} src={require("../" + item.image)}
+                                               alt={item.name}/> </span> <span>{item.text}</span>
                                 </p>
+                                //300 1.333em / 1.6 Lato, Helvetica, Arial, sans-serif
                             ))}
                         </div>
                     </div>

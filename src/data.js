@@ -1,7 +1,7 @@
 export const about = {
     name: "Saul Rowntree",
     title: "Full Stack Developer.",
-    body: "Based in Belfast, Northern Ireland. Passionate about all things computing 🖥, travel 🚀 and open source ⚡️.",
+    body: "Based in Belfast, Northern Ireland. Passionate about all things 🖥 computing, 🚀 travel and",
     image: "assets/memoji.png"
 }
 
@@ -41,23 +41,27 @@ export const carouselData = {
     "slides": [
         {
             "text": "ReactJs",
-            "image": "ReactLogo"
+            "image": "assets/ReactLogo.svg"
         },
         {
             "text": "Java",
-            "image": "JavaLogo"
+            "image": "assets/JavaLogo.svg"
         },
         {
             "text": "Docker",
-            "image": "DockerLogo"
+            "image": "assets/DockerLogo.svg"
         },
         {
             "text": "Kubernetes",
-            "image": "KubernetesLogo"
+            "image": "assets/KubernetesLogo.svg"
         },
         {
             "text": "HelidonMP",
-            "image": "HelidonLogo"
+            "image": "assets/HelidonLogo.svg"
+        },
+        {
+            "text": "Git",
+            "image": "assets/GitLogo.svg"
         }
     ]
 }

@@ -14,7 +14,6 @@ function App() {
             <Projects/>
             <Skills/>
             <Contact/>
-            <VerticalCarousel data={carouselData.slides}/>
         </main>
     );
 }

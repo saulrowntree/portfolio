@@ -60,8 +60,8 @@
 
 
 :root {
-    --white: #fff;
-    --orange: #f36c00;
+    --white: #00000;
+    --orange: rgba(255, 255, 255, 0);
 }
 
 * {
@@ -73,24 +73,25 @@ button {
 }
 
 .outer-container {
-    max-width: 800px;
+    max-width: 200px;
+    max-height: 200px;
     margin: auto;
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .outer-container > div {
     flex: 1;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+
 }
 
 .outer-container .carousel-wrapper {
-    background: var(--orange);
+    background: rgba(255, 255, 255, 0);
     display: flex;
     flex-direction: column;
+
 }
 
 .outer-container .carousel-wrapper p,
@@ -105,12 +106,6 @@ button {
     background: var(--white);
 }
 
-.leading-text {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin-right: 6px;
-}
 
 .carousel {
     height: 100%;
@@ -118,24 +113,6 @@ button {
     flex: 5;
     align-items: center;
     color: var(--white);
-}
-
-.carousel-button {
-    display: flex;
-    align-self: center;
-    padding: 10px;
-    max-width: 50px;
-    border-radius: 30px;
-    background: var(--orange);
-    border: 2px solid var(--white);
-}
-
-.carousel-button svg {
-    height: 26px;
-    width: 26px;
-}
-.carousel-button path {
-    fill: var(--white);
 }
 
 .slides {
@@ -166,7 +143,7 @@ button {
     background: linear-gradient(
             0deg,
             hsla(0, 0%, 100%, 0) 0%,
-            hsla(27, 100%, 48%, 1) 100%
+            hsla(0, 0%, 100%, 0) 100%
     );
 }
 
@@ -174,7 +151,7 @@ button {
     bottom: 0;
     background: linear-gradient(
             0deg,
-            hsla(27, 100%, 48%, 1) 0%,
+            hsla(0, 0%, 100%, 0) 0%,
             hsla(0, 0%, 100%, 0) 100%
     );
 }
