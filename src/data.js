@@ -1,7 +1,7 @@
 export const about = {
     name: "Saul Rowntree",
     title: "Full Stack Developer.",
-    body: "Based in Belfast, Northern Ireland. Passionate about all things 🖥 computing, 🚀 travel and",
+    body: "Based in Belfast, Northern Ireland. Passionate about all things computing 🖥 , travel 🚀 and",
     image: "assets/memoji.png"
 }
 

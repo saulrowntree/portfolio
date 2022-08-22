@@ -11,8 +11,8 @@ export default function Home() {
     })
     return (
         <Fade bottom duration={2000} distance="40px">
-            <section id="projectDiv">
-                <div className="container flex md:flex-row flex-col items-center">
+            <section id="projectDiv" className=" h-screen ">
+                <div className="container flex lg:flex-row flex-col items-center ">
                     <canvas id="fuzz"/>
                     <div
                         className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -24,10 +24,9 @@ export default function Home() {
                                 style={{'color': 'grey'}}>
                         and <br/> I'm a </span>{about.title}
                         </h1>
-                        <p className="mb-8 leading-relaxed text-2xl">
-                            {about.body}
-                        </p>
-                        <VerticalCarousel data={carouselData.slides}/>
+                        <span className="mb-8 leading-relaxed text-2xl inline">
+                            {about.body}&nbsp;<VerticalCarousel data={carouselData.slides}/>
+                        </span>
                         <div className="flex justify-center">
                             <a
                                 href="src/components/home/Home.jsx"

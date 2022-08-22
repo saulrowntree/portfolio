@@ -17,7 +17,7 @@ const VerticalCarousel = (array) => {
     const shuffleThreshold = halfwayIndex * itemHeight;
 
     // Used to determine which items should be visible. this prevents the "ghosting" animation
-    const visibleStyleThreshold = shuffleThreshold / 4;
+    const visibleStyleThreshold = shuffleThreshold /4;
 
     const determinePlacement = (itemIndex) => {
         // If these match, the item is active
@@ -46,43 +46,36 @@ const VerticalCarousel = (array) => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setActiveIndex((prevIndex) => {
-                if (prevIndex + 1 > array.data.length - 1) {
-                    return 0;
+                if (prevIndex - 1 < 0) {
+                    return array.data.length-1;
                 }
-                return prevIndex + 1;
+                return prevIndex - 1;
             });
         }, 1350)
         return () => clearInterval(intervalId)
     })
 
-    return (<div className="container">
-        <section className="outer-container">
-            <div className="carousel-wrapper">
-                <div className="carousel">
-                    <div className="slides">
-                        <div className="carousel-inner">
-                            {array.data.map((item, i) => (
-                                <p
-                                    className={cn("carousel-item", {
-                                        active: activeIndex === i,
-                                        visible: Math.abs(determinePlacement(i)) <= visibleStyleThreshold
-                                    })}
-                                    key={item.text}
-                                    style={{
-                                        transform: `translateY(${determinePlacement(i)}px)`
-                                    }}
-                                >
-                                    <span><img style={{display: "inline"}} src={require("../" + item.image)}
-                                               alt={item.name}/> </span> <span>{item.text}</span>
-                                </p>
-                                //300 1.333em / 1.6 Lato, Helvetica, Arial, sans-serif
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>);
+    return (
+        <p style={{display: "inline"}}>
+        <span className="carousel-inner">
+            {array.data.map((item, i) => (
+                <p
+                    className={cn("carousel-item", {
+                        active: activeIndex === i,
+                        visible: Math.abs(determinePlacement(i)) <= visibleStyleThreshold
+                    })}
+                    key={item.text}
+                    style={{
+                        transform: `translateY(${determinePlacement(i)}px)`
+                    }}
+                >
+                    <span>{item.text}</span> <span><img style={{display: "inline"}} src={require("../" + item.image)}
+                                               alt={item.name}/> </span>
+                </p>
+            ))}
+        </span>
+        </p>
+    );
 };
 
 VerticalCarousel.propTypes = {
