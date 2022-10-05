@@ -1,2 +1,9 @@
-//300 1.333em / 1.6 Lato, Helvetica, Arial, sans-serif
+import React from 'react';
 
+function About() {
+    return (
+        <div></div>
+    );
+}
+
+export default About;

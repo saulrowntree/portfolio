@@ -4,7 +4,6 @@ import cn from "classnames"
 
 
 const VerticalCarousel = (array) => {
-    console.log(array.data.length)
     const [activeIndex, setActiveIndex] = useState(0);
 
     // Used to determine which items appear above the active item
@@ -17,7 +16,7 @@ const VerticalCarousel = (array) => {
     const shuffleThreshold = halfwayIndex * itemHeight;
 
     // Used to determine which items should be visible. this prevents the "ghosting" animation
-    const visibleStyleThreshold = shuffleThreshold /4;
+    const visibleStyleThreshold = shuffleThreshold /32;
 
     const determinePlacement = (itemIndex) => {
         // If these match, the item is active
@@ -56,7 +55,6 @@ const VerticalCarousel = (array) => {
     })
 
     return (
-        <p style={{display: "inline"}}>
         <span className="carousel-inner">
             {array.data.map((item, i) => (
                 <p
@@ -74,7 +72,6 @@ const VerticalCarousel = (array) => {
                 </p>
             ))}
         </span>
-        </p>
     );
 };
 

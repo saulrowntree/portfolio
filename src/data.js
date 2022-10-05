@@ -1,7 +1,7 @@
-export const about = {
+export const home = {
     name: "Saul Rowntree",
     title: "Full Stack Developer.",
-    body: "Based in Belfast, Northern Ireland. Passionate about all things computing 🖥 , travel 🚀 and",
+    body: "Based in Belfast, Northern Ireland. Passionate about all things computing 🖥, travel 🚀 and",
     image: "assets/memoji.png"
 }
 
@@ -64,4 +64,17 @@ export const carouselData = {
             "image": "assets/GitLogo.svg"
         }
     ]
+}
+
+export const SCREENS = {
+    sm: "640px",
+    // => @media (min-width: 640px) { ... }
+    md: "768px",
+    // => @media (min-width: 768px) { ... }
+    lg: "1024px",
+    // => @media (min-width: 1024px) { ... }
+    xl: "1280px",
+    // => @media (min-width: 1280px) { ... }
+    "2xl": "1536px",
+    // => @media (min-width: 1536px) { ... }
 }

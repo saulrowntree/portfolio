@@ -1,30 +1,44 @@
-import { ArrowRightIcon } from "@heroicons/react/solid";
-import React from "react";
+import React, {useState} from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
+import {NavItems} from "./NavItems";
+
+const NavBarContainer = styled.div`
+  min-height: 68px;
+  ${tw`
+w-full
+justify-between
+fixed
+z-10
+`}
+`;
+
+const LogoContainer = styled.div`
+  ${tw`
+  pt-1
+ `}
+`;
 
 export default function Navbar() {
+
+    const [color, setColor] = useState(false)
+    const changeColor = () => {
+        if (window.scrollY >= 90) {
+            setColor(true)
+        } else {
+            setColor(false)
+        }
+    }
+    window.addEventListener('scroll', changeColor)
     return (
-        <header className="bg-gray-800 md:sticky top-0 z-40">
-            <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                <span className="title-font font-medium text-white mb-4 md:mb-0">
-                    <a href="src/components/Navbar#about" className="ml-3 text-xl">
-                        Saul.
-                    </a>
-                </span>
-                <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
-                    <a href="src/components/Navbar#projects" className="mr-5 hover:text-white">
-                        Past Work
-                    </a>
-                    <a href="src/components/Navbar#skills" className="mr-5 hover:text-white">
-                        Skills
-                    </a>
-                </nav>
-                <a
-                    href="src/components/Navbar#contact"
-                    className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
-                    Hire Me
-                    <ArrowRightIcon className="w-4 h-4 ml-1" />
-                </a>
-            </div>
-        </header>
+        <NavBarContainer className={color ? 'header header-bg' : 'header'}>
+            <LogoContainer>
+                <div>
+                <a href="#home" ><span
+                className="text-white text-4xl pl-4 block" style={{"font-family": "'Alumni Sans Pinstripe', sans-serif"}}>Saul<br/>Rowntree</span></a>
+                </div>
+            </LogoContainer>
+            <NavItems/>
+        </NavBarContainer>
     );
 }
